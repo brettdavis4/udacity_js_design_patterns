@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Cat clicker</title>
+        
+    </head>
+    <body>
+        <img src="unnamed.jpg" id="my-elem"/>
+        
+        <div id="clickCount"></div>
+    </body>
+    
+    <script>
+            var count = 0;
+            
+            var elem = document.getElementById("my-elem");
+            elem.addEventListener('click', function(){
+              //the element has been clicked... do stuff here
+              count = count + 1;
+              document.getElementById("clickCount").innerHTML = count;
+            }, false);
+        </script>
+</html>
