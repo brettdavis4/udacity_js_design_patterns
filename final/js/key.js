@@ -10,4 +10,5 @@ var auth = {
     serviceProvider: {
         signatureMethod: "HMAC-SHA1"
     }
+    //
 };
