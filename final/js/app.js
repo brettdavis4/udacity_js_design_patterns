@@ -195,12 +195,13 @@ var ViewModel = function() {
     self.filterResults = function(){
         var value = self.searchInput().toLowerCase();
         if(value != ''){
-            clearMarkers();
             self.burgerList(self.burgerList().filter(function(data){
-                console.log(value);
-                addmarker(data.lat(), data.long(), data.id(), data.name(), data.comments());
-                return data.name().toLowerCase().startsWith(value);
-            }));
+                 return data.name().toLowerCase().startsWith(value); 
+             }));
+             clearMarkers();
+             self.burgerList().forEach(function(data){
+                 addmarker(data.lat(), data.long(), data.id(), data.name(), data.comments());
+             });
         }else{
             showMarkers();
             self.burgerList(self.burgerListClone());
