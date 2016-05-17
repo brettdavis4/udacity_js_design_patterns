@@ -50,9 +50,8 @@ function addmarker(lat,lng, id, name, comments){
         'method': 'GET',
         'parameters': parameters
     };
-    //var OAuth;
-    //OAuth.setTimestampAndNonce(message);
-    //OAuth.SignatureMethod.sign(message, accessor);
+    OAuth.setTimestampAndNonce(message);
+    OAuth.SignatureMethod.sign(message, accessor);
     var parameterMap = OAuth.getParameterMap(message.parameters);
     parameterMap.oauth_signature = OAuth.percentEncode(parameterMap.oauth_signature)
     $.ajax({
